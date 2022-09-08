@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class uploaderConfig(AppConfig):
-    name = 'uploader'
+class UploaderConfig(AppConfig):
+    name = "uploader"

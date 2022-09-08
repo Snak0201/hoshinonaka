@@ -45,7 +45,6 @@
     <Compile Include="uploader\apps.py" />
     <Compile Include="uploader\migrations\__init__.py" />
     <Compile Include="uploader\models.py" />
-    <Compile Include="uploader\tests.py" />
     <Compile Include="uploader\views.py" />
     <Compile Include="uploader\__init__.py" />
   </ItemGroup>

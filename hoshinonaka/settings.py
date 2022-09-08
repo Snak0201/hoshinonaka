@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    "authorization.apps.AuthorizationConfig"
+    "authorization.apps.AuthorizationConfig",
+    "uploader.apps.UploaderConfig",
 ]
 
 # Middleware framework
@@ -124,7 +125,7 @@ STATIC_ROOT = "/var/www/{}/static/".format(PROJECT_NAME)
 MEDIA_URL = "/media/"
 
 if DEBUG:
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media_root")
+    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 else:
     MEDIA_ROOT = "/var/www/{}/media".format(PROJECT_NAME)
 

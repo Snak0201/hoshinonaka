@@ -364,3 +364,4 @@ FodyWeavers.xsd
 /env
 .env
 *.sqlite3
+/media
