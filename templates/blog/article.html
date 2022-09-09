@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}Article{% endblock %}
+{% block content %}
+<h1>{{ article.title }}</h1>
+<div>作成日時：{{ article.created_at }}</div>
+{{ article.text | safe }}
+{% endblock %}

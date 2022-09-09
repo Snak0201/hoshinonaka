@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView, DetailView
+from .models import Article
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -6,4 +7,6 @@ class IndexView(TemplateView):
 
 
 class ArticleView(DetailView):
-    pass
+    model = Article
+    context_object_name = "article"
+    template_name = "blog/article.html"
