@@ -6,14 +6,17 @@
     <meta charset="utf-8" />
     <title>{% block title %}{% endblock %}</title>
 </head>
+<header>
+    <h1>Hoshinonaka</h1>
+</header>
 
 <body>
-    <div class="head">
-        <h1>Hoshinonaka</h1>
-    </div>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
 </body>
+<footer>
+    {% block footer %}{% endblock %}
+</footer>
 
 </html>

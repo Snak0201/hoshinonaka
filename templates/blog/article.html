@@ -6,3 +6,6 @@
 <div>{{ article.text | safe }}</div>
 <div><a href="{% url 'blog:articles' %}">一覧へ</a></div>
 {% endblock %}
+{% block footer %}
+<div><a href="{% url 'blog:index' %}">トップへ</a></div>
+{% endblock %}

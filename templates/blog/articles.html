@@ -5,5 +5,7 @@
 {% for article in articles %}
 <li><a href="{% url 'blog:article' article.id %}">{{ article.title }}</a></li>
 {% endfor %}
+{% endblock %}
+{% block footer %}
 <div><a href="{% url 'blog:index' %}">トップへ</a></div>
 {% endblock %}
