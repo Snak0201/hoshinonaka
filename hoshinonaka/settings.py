@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "authorization.apps.AuthorizationConfig",
     "uploader.apps.UploaderConfig",
+    "blog.apps.BlogConfig",
 ]
 
 # Middleware framework

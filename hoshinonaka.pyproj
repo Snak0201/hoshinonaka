@@ -36,6 +36,12 @@
     <Compile Include="authorization\migrations\__init__.py" />
     <Compile Include="authorization\models.py" />
     <Compile Include="authorization\__init__.py" />
+    <Compile Include="blog\admin.py" />
+    <Compile Include="blog\apps.py" />
+    <Compile Include="blog\migrations\__init__.py" />
+    <Compile Include="blog\models.py" />
+    <Compile Include="blog\views.py" />
+    <Compile Include="blog\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="hoshinonaka\__init__.py" />
     <Compile Include="hoshinonaka\settings.py" />
@@ -67,6 +73,8 @@
     <Folder Include="authorization\migrations\" />
     <Folder Include="authorization\migrations\__pycache__\" />
     <Folder Include="authorization\__pycache__\" />
+    <Folder Include="blog\" />
+    <Folder Include="blog\migrations\" />
     <Folder Include="hoshinonaka\" />
     <Folder Include="media\" />
     <Folder Include="static\" />
