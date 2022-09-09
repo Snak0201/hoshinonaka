@@ -2,9 +2,11 @@
 {% block title %}Snak/Hoshinonaka{% endblock %}
 {% block content %}
 ほしのなか政府は次の{{ bureaus.count }}局によって運営されています。
-{% for bureau in bureaus %}
-<li>{{ bureau.name }}</li>
-{% endfor %}
+<ul>
+    {% for bureau in bureaus %}
+    <li>{{ bureau.name }}</li>
+    {% endfor %}
+</ul>
 <div><a href="{% url 'blog:articles' %}">全記事一覧へ</a></div>
 {% endblock %}
 {% block footer %}

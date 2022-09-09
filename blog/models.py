@@ -36,6 +36,7 @@ class Article(models.Model):
         null=True,
         verbose_name="局",
     )
+    is_draft = models.BooleanField(verbose_name="下書き", default=False)
     created_at = models.DateTimeField(verbose_name="作成日時", auto_now_add=True)
     updated_at = models.DateTimeField(verbose_name="最終更新日時", auto_now=True)
 
