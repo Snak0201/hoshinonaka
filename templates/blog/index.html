@@ -4,7 +4,7 @@
 ほしのなか政府は次の{{ bureaus.count }}局によって運営されています。
 <ul>
     {% for bureau in bureaus %}
-    <li>{{ bureau.name }}</li>
+    <li><a href="{% url 'blog:bureau' bureau.code %}">{{ bureau.name }}</a></li>
     {% endfor %}
 </ul>
 <div><a href="{% url 'blog:articles' %}">全記事一覧へ</a></div>
