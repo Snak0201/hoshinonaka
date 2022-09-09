@@ -40,6 +40,9 @@
     <Compile Include="blog\apps.py" />
     <Compile Include="blog\migrations\__init__.py" />
     <Compile Include="blog\models.py" />
+    <Compile Include="blog\urls.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="blog\views.py" />
     <Compile Include="blog\__init__.py" />
     <Compile Include="manage.py" />
@@ -65,6 +68,7 @@
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="templates\base.html" />
+    <Content Include="templates\blog\index.html" />
     <Content Include="templates\uploader\image.html" />
     <Content Include="templates\uploader\file_list.html" />
   </ItemGroup>
@@ -79,6 +83,7 @@
     <Folder Include="media\" />
     <Folder Include="static\" />
     <Folder Include="templates\" />
+    <Folder Include="templates\blog\" />
     <Folder Include="templates\uploader\" />
     <Folder Include="uploader\" />
     <Folder Include="uploader\migrations\" />
