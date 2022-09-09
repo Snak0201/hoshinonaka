@@ -59,6 +59,8 @@
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="templates\base.html" />
+    <Content Include="templates\uploader\image.html" />
+    <Content Include="templates\uploader\file_list.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="authorization\" />
@@ -69,6 +71,7 @@
     <Folder Include="media\" />
     <Folder Include="static\" />
     <Folder Include="templates\" />
+    <Folder Include="templates\uploader\" />
     <Folder Include="uploader\" />
     <Folder Include="uploader\migrations\" />
   </ItemGroup>
