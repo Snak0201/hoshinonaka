@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Bureau{% endblock %}
+{% block content %}
+<h1>{{ bureau.name }}</h1>
+<div>{{ bureau.text | safe }}</div>
+{% endblock %}
+{% block footer %}
+<div><a href="{% url 'blog:index' %}">トップへ</a></div>
+{% endblock %}

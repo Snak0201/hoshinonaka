@@ -22,3 +22,10 @@ class ArticleView(DetailView):
     context_object_name = "article"
     template_name = "blog/article.html"
     pk_url_kwarg = "article_id"
+
+
+class BureauView(DetailView):
+    model = Bureau
+    context_object_name = "bureau"
+    template_name = "blog/bureau.html"
+    pk_url_kwarg = "bureau_code"
