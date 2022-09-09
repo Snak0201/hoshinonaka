@@ -24,17 +24,38 @@ class Bureau(models.Model):
         return self.name
 
 
-class Article(models.Model):
-    title = models.CharField(verbose_name="タイトル", max_length=128)
-    markdown_text = models.TextField(verbose_name="本文（マークダウン）")
+class Committee(models.Model):
+    code = models.SlugField(verbose_name="委員会コード", max_length=4)
+    name = models.CharField(verbose_name="委員会名", max_length=32)
     bureau = models.ForeignKey(
         Bureau,
         on_delete=models.SET_NULL,
-        related_name="article_bureau",
+        related_name="comittee_bureau",
         to_field="code",
+        verbose_name="局",
+        null=True,
+        blank=True,
+    )
+    markdown_text = models.TextField(verbose_name="委員会紹介（マークダウン）")
+
+    def text(self):
+        markdown = Markdown(extensions=EXTENSIONS, extension_configs=CONFIGS)
+        return markdown.convert(self.markdown_text)
+
+    def __str__(self):
+        return f"{self.bureau.name}: {self.name}"
+
+
+class Article(models.Model):
+    title = models.CharField(verbose_name="タイトル", max_length=128)
+    markdown_text = models.TextField(verbose_name="本文（マークダウン）")
+    committee = models.ForeignKey(
+        Committee,
+        on_delete=models.SET_NULL,
+        related_name="article_committee",
+        verbose_name="委員会",
         blank=True,
         null=True,
-        verbose_name="局",
     )
     is_draft = models.BooleanField(verbose_name="下書き", default=False)
     created_at = models.DateTimeField(verbose_name="作成日時", auto_now_add=True)

@@ -30,9 +30,3 @@ class BureauView(DetailView):
     context_object_name = "bureau"
     template_name = "blog/bureau.html"
     pk_url_kwarg = "bureau_code"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        code = self.kwargs.get("bureau_code")
-        context["articles"] = Article.objects.filter(bureau=code)
-        return context
