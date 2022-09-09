@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block title %}Snak/Hoshinonaka{% endblock %}
 {% block content %}
-<div><a href="{% url 'blog:articles' %}">記事一覧へ</a></div>
+ほしのなか政府は次の{{ bureaus.count }}局によって運営されています。
+{% for bureau in bureaus %}
+<li>{{ bureau.name }}</li>
+{% endfor %}
+<div><a href="{% url 'blog:articles' %}">全記事一覧へ</a></div>
 {% endblock %}
 {% block footer %}
 <div><a href="{% url 'blog:index' %}">トップへ</a></div>
