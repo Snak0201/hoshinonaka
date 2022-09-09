@@ -11,10 +11,10 @@ class UploadImageView(CreateView):
     success_url = reverse_lazy("uploader:images")
 
 
-class UploadedFileListView(ListView):
+class UploadedMediaListView(ListView):
     model = UploadedImage
     template_name = "uploader/file_list.html"
 
 
 image = UploadImageView.as_view()
-file_list = UploadedFileListView.as_view()
+media = UploadedMediaListView.as_view()

@@ -4,6 +4,6 @@ from . import views
 app_name = "uploader"
 
 urlpatterns = [
-    path("", views.file_list, name="file_list"),
+    path("", views.media, name="media"),
     path("image/", views.image, name="image"),
 ]
