@@ -3,5 +3,6 @@
 {% block content %}
 <h1>{{ article.title }}</h1>
 <div>作成日時：{{ article.created_at }}</div>
-{{ article.text | safe }}
+<div>{{ article.text | safe }}</div>
+<div><a href="{% url 'blog:articles' %}">一覧へ</a></div>
 {% endblock %}

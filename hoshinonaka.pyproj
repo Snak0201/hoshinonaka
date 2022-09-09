@@ -69,6 +69,7 @@
     <Content Include="requirements.txt" />
     <Content Include="templates\base.html" />
     <Content Include="templates\blog\article.html" />
+    <Content Include="templates\blog\articles.html" />
     <Content Include="templates\blog\index.html" />
     <Content Include="templates\uploader\image.html" />
     <Content Include="templates\uploader\file_list.html" />
