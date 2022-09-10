@@ -5,9 +5,12 @@
     <h1>{{ article.title }}</h1>
 </div>
 <div>
-    {% if article.bureau %}<a href="{% url 'blog:bureau' article.bureau.code %}">{{ article.bureau }}</a>{% endif %}<br>
+    {% if article.bureau %}
+    局: <a href="{% url 'blog:bureau' article.bureau.code %}">{{ article.bureau }}</a>
+    {% endif %}<br>
+    {% if article.committees.all %}委員会: {% endif %}
     {% for committee in article.committees.all %}
-    <a href="">{{ committee.name }}</a>
+    <a href="{% url 'blog:committee' committee.code %}">{{ committee.name }}</a>
     {% endfor %}
 </div>
 <div>

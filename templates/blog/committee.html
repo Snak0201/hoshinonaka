@@ -2,7 +2,10 @@
 {% block title %}Committee{% endblock %}
 {% block content %}
 <h1>{{ committee.name }}</h1>
-関連局: {% for bureau in committee.related_bureaus.all %}<a>{{ bureau.name }}</a>{% empty %}なし{% endfor %}
+関連局: {% for bureau in committee.related_bureaus.all %}
+<a href="{% url 'blog:bureau' bureau.code %}">{{ bureau.name }}</a>
+{% empty %}なし{% endfor %}
+{% if committee.text %}<h1>委員会紹介</h1>{% endif %}
 <div>{{ committee.text | safe }}</div>
 {% if articles %}
 <h1>委員会記事一覧</h1>
