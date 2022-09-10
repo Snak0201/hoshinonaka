@@ -1,6 +1,7 @@
 from multiprocessing import context
 from django.views.generic import TemplateView, DetailView, ListView
 from .models import Article, Bureau, Committee
+from django.shortcuts import get_object_or_404
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -16,6 +17,7 @@ class ArticleListView(ListView):
     model = Article
     context_object_name = "articles"
     template_name = "blog/articles.html"
+    queryset = Article.objects.filter(is_draft=False).order_by("updated_at")
 
 
 class ArticleView(DetailView):
@@ -23,6 +25,14 @@ class ArticleView(DetailView):
     context_object_name = "article"
     template_name = "blog/article.html"
     pk_url_kwarg = "article_id"
+
+    def get_object(self):
+        article = super().get_object(
+            Article.objects.filter(
+                pk=self.kwargs.get(self.pk_url_kwarg), is_draft=False
+            )
+        )
+        return article
 
 
 class BureauView(DetailView):
@@ -34,11 +44,14 @@ class BureauView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         code = self.kwargs.get(self.pk_url_kwarg)
-        context["articles"] = Article.objects.filter(bureau=code).order_by("updated_at")
+        context["articles"] = Article.objects.filter(
+            bureau=code, is_draft=False
+        ).order_by("updated_at")
         context["committees"] = Committee.objects.filter(related_bureaus=code).order_by(
             "order"
         )
         return context
+
 
 class CommitteeListView(ListView):
     model = Committee
@@ -55,7 +68,7 @@ class CommitteeView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         code = self.kwargs.get(self.pk_url_kwarg)
-        context["articles"] = Article.objects.filter(committees=code).order_by(
-            "updated_at"
-        )
+        context["articles"] = Article.objects.filter(
+            committees=code, is_draft=False
+        ).order_by("updated_at")
         return context
