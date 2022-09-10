@@ -35,6 +35,7 @@ class BureauView(DetailView):
         context = super().get_context_data(**kwargs)
         code = self.kwargs.get(self.pk_url_kwarg)
         context["articles"] = Article.objects.filter(bureau=code)
+        context["committees"] = Committee.objects.filter(related_bureaus=code)
         return context
 
 

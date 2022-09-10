@@ -3,6 +3,14 @@
 {% block content %}
 <h1>{{ bureau.name }}</h1>
 <div>{{ bureau.text | safe }}</div>
+{% if committees %}
+<h1>委員会</h1>
+{% endif %}
+<ul>
+    {% for committee in committees %}
+    <li><a href="{% url 'blog:committee' committee.code %}">{{ committee.name }}</a></li>
+    {% endfor %}
+</ul>
 {% if articles %}
 <h1>局記事一覧</h1>
 {% endif %}
