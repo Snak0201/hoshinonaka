@@ -7,7 +7,11 @@
     <li><a href="{% url 'blog:bureau' bureau.code %}">{{ bureau.name }}</a></li>
     {% endfor %}
 </ul>
-<div><a href="{% url 'blog:articles' %}">全記事一覧へ</a></div>
+
+<div>
+    <a href="{% url 'blog:articles' %}">全記事一覧へ</a>
+    <a href="{% url 'blog:committees' %}">全委員会一覧へ</a>
+</div>
 {% endblock %}
 {% block footer %}
 <div><a href="{% url 'blog:index' %}">トップへ</a></div>

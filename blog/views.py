@@ -40,6 +40,11 @@ class BureauView(DetailView):
         )
         return context
 
+class CommitteeListView(ListView):
+    model = Committee
+    context_object_name = "committees"
+    template_name = "blog/committees.html"
+
 
 class CommitteeView(DetailView):
     model = Committee
