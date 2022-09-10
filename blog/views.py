@@ -34,8 +34,10 @@ class BureauView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         code = self.kwargs.get(self.pk_url_kwarg)
-        context["articles"] = Article.objects.filter(bureau=code)
-        context["committees"] = Committee.objects.filter(related_bureaus=code)
+        context["articles"] = Article.objects.filter(bureau=code).order_by("updated_at")
+        context["committees"] = Committee.objects.filter(related_bureaus=code).order_by(
+            "order"
+        )
         return context
 
 
@@ -48,5 +50,7 @@ class CommitteeView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         code = self.kwargs.get(self.pk_url_kwarg)
-        context["articles"] = Article.objects.filter(committees=code)
+        context["articles"] = Article.objects.filter(committees=code).order_by(
+            "updated_at"
+        )
         return context
