@@ -29,6 +29,7 @@ class Committee(models.Model):
         verbose_name="委員会コード", max_length=8, primary_key=True, unique=True
     )
     name = models.CharField(verbose_name="委員会名", max_length=32)
+    order = models.PositiveSmallIntegerField(verbose_name="配置順", default=0)
     markdown_text = models.TextField(
         verbose_name="委員会紹介（マークダウン）", blank=True, null=True
     )
