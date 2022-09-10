@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Committee{% endblock %}
+{% block content %}
+<h1>{{ committee.name }}</h1>
+関連局: {% for bureau in committee.related_bureaus.all %}<a>{{ bureau.name }}</a>{% empty %}なし{% endfor %}
+<div>{{ committee.text | safe }}</div>
+{% if articles %}
+<h1>委員会記事一覧</h1>
+{% endif %}
+<ul>
+    {% for article in articles %}
+    <li><a href="{% url 'blog:article' article.id %}">{{ article.title }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+{% block footer %}
+<div><a href="{% url 'blog:index' %}">トップへ</a></div>
+{% endblock %}

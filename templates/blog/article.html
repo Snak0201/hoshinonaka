@@ -1,11 +1,28 @@
 {% extends "base.html" %}
 {% block title %}Article{% endblock %}
 {% block content %}
-<h1>{{ article.title }}</h1>
-<div>作成日時：{{ article.created_at }} 更新日時：{{ article.updated_at }}</div>
-<div>{{ article.text | safe }}</div>
-<div><a href="{% url 'blog:articles' %}">一覧へ</a></div>
+<div>
+    <h1>{{ article.title }}</h1>
+</div>
+<div>
+    {% if article.bureau %}<a href="{% url 'blog:bureau' article.bureau.code %}">{{ article.bureau }}</a>{% endif %}<br>
+    {% for committee in article.committees.all %}
+    <a href="">{{ committee.name }}</a>
+    {% endfor %}
+</div>
+<div>
+    作成日時：{{ article.created_at }}<br>
+    更新日時：{{ article.updated_at }}<br>
+</div>
+<div>
+    {{ article.text | safe }}
+</div><br>
+<div>
+    <a href="{% url 'blog:articles' %}">一覧へ</a>
+</div>
 {% endblock %}
 {% block footer %}
-<div><a href="{% url 'blog:index' %}">トップへ</a></div>
+<div>
+    <a href="{% url 'blog:index' %}">トップへ</a>
+</div>
 {% endblock %}

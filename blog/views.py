@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.views.generic import TemplateView, DetailView, ListView
-from .models import Article, Bureau
+from .models import Article, Bureau, Committee
 
 # Create your views here.
 class IndexView(TemplateView):
@@ -33,6 +33,19 @@ class BureauView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        code = self.kwargs.get("bureau_code")
+        code = self.kwargs.get(self.pk_url_kwarg)
         context["articles"] = Article.objects.filter(bureau=code)
+        return context
+
+
+class CommitteeView(DetailView):
+    model = Committee
+    context_object_name = "committee"
+    template_name = "blog/committee.html"
+    pk_url_kwarg = "committee_code"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        code = self.kwargs.get(self.pk_url_kwarg)
+        context["articles"] = Article.objects.filter(committees=code)
         return context
