@@ -26,7 +26,7 @@ class Bureau(models.Model):
 
 class Committee(models.Model):
     code = models.SlugField(
-        verbose_name="委員会コード", max_length=8, primary_key=True, unique=True
+        verbose_name="委員会コード", max_length=16, primary_key=True, unique=True
     )
     name = models.CharField(verbose_name="委員会名", max_length=32)
     order = models.PositiveSmallIntegerField(verbose_name="配置順", default=0)

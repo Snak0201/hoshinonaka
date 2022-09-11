@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Committees{% endblock %}
+{% block content %}
+<h1>委員会一覧</h1>
+<ul>
+    {% for committee in committees %}
+    <li><a href="{% url 'blog:committee' committee.code %}">{{ committee.name }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
+{% block footer %}
+<div><a href="{% url 'blog:index' %}">トップへ</a></div>
+{% endblock %}
