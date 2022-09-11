@@ -9,9 +9,7 @@ EXTENSIONS = ["extra", "fenced_code", "sane_lists"]
 
 
 class Bureau(models.Model):
-    code = models.SlugField(
-        verbose_name="局コード", primary_key=True, unique=True, max_length=4
-    )
+    code = models.SlugField(verbose_name="局コード", unique=True, max_length=4)
     name = models.CharField(verbose_name="局名", max_length=8)
     order = models.PositiveSmallIntegerField(verbose_name="配置順", default=0)
     markdown_text = models.TextField(verbose_name="局紹介（マークダウン）", blank=True, null=True)
@@ -25,9 +23,7 @@ class Bureau(models.Model):
 
 
 class Committee(models.Model):
-    code = models.SlugField(
-        verbose_name="委員会コード", max_length=16, primary_key=True, unique=True
-    )
+    code = models.SlugField(verbose_name="委員会コード", max_length=16, unique=True)
     name = models.CharField(verbose_name="委員会名", max_length=32)
     order = models.PositiveSmallIntegerField(verbose_name="配置順", default=0)
     markdown_text = models.TextField(
