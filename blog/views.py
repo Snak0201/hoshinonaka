@@ -57,6 +57,7 @@ class CommitteeListView(ListView):
     model = Committee
     context_object_name = "committees"
     template_name = "blog/committees.html"
+    queryset = Committee.objects.all().order_by("order")
 
 
 class CommitteeView(DetailView):
