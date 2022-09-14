@@ -23,7 +23,7 @@ PROJECT_NAME = os.path.basename(BASE_DIR)
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_random_secret_key() 
+SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -86,8 +86,8 @@ WSGI_APPLICATION = "hoshinonaka.wsgi.application"
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
     "default": {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
     }
 }
 
@@ -124,10 +124,7 @@ STATIC_ROOT = "/var/www/{}/static/".format(PROJECT_NAME)
 
 MEDIA_URL = "/media/"
 
-if DEBUG:
-    MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-else:
-    MEDIA_ROOT = "/var/www/{}/media".format(PROJECT_NAME)
+MEDIA_ROOT = "/var/www/{}/media".format(PROJECT_NAME)
 
 SITE_ID = 1
 
