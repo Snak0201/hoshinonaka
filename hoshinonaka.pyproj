@@ -81,8 +81,9 @@
     <Content Include="templates\blog\article.html" />
     <Content Include="templates\blog\articles.html" />
     <Content Include="templates\blog\index.html" />
+    <Content Include="templates\uploader\file.html" />
     <Content Include="templates\uploader\image.html" />
-    <Content Include="templates\uploader\file_list.html" />
+    <Content Include="templates\uploader\media.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="api\" />

@@ -6,4 +6,5 @@ app_name = "uploader"
 urlpatterns = [
     path("", views.media, name="media"),
     path("image/", views.image, name="image"),
+    path("file/", views.file, name="file"),
 ]

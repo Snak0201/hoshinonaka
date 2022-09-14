@@ -1,0 +1,12 @@
+<title>めでぃああっぷろーだー</title>
+<p><a href="{% url 'uploader:image' %}">画像アップロードへ</a></p>
+<p><a href="{% url 'uploader:file' %}">ファイルアップロードへ</a></p>
+<h1>ファイルの一覧</h1>
+<h2>画像</h2>
+{% for image in object_list %}
+<p><a href="{{ image.file.url }}">{{ image.file.url }}</a></p>
+{% empty %}見つかりませんでした{% endfor %}
+<h2>ファイル</h2>
+{% for file in file_list %}
+<p><a href="{{ file.file.url }}">{{ file.file.url }}</a></p>
+{% empty %}見つかりませんでした{% endfor %}

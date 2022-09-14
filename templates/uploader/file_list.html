@@ -1,5 +1,0 @@
-<p><a href="{% url 'uploader:image' %}">画像アップロードへ</a></p>
-<h1>ファイルの一覧</h1>
-{% for image in object_list %}
-<p><a href="{{ image.image.url }}">{{ image.image.url }}</a></p>
-{% endfor %}
