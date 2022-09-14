@@ -365,3 +365,4 @@ FodyWeavers.xsd
 .env
 *.sqlite3
 /media
+/hoshinonaka/local_settings.py

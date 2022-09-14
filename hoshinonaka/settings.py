@@ -12,25 +12,23 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import environ
+from django.core.management.utils import get_random_secret_key
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = os.path.basename(BASE_DIR)
 
-# env
-env = environ.Env()
-env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = get_random_secret_key() 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["localhost", ".pythonanywhere.com", "Snak.pythonanywhere.com"]
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -46,7 +44,6 @@ INSTALLED_APPS = [
     "django_cleanup.apps.CleanupConfig",
     "rest_framework",
     "authorization.apps.AuthorizationConfig",
-    "uploader.apps.UploaderConfig",
     "blog.apps.BlogConfig",
     "api.apps.APIConfig",
 ]
@@ -88,11 +85,10 @@ WSGI_APPLICATION = "hoshinonaka.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
-    "default": env.db()
-    # {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    # }
+    {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
 }
 
 # Password validation
@@ -139,9 +135,6 @@ AUTH_USER_MODEL = "authorization.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-# #ユーザ登録確認メールを送信
-# ACCOUNT_EMAIL_VARIFICATION = 'mandatory'
-# ACCOUNT_EMAIL_REQUIRED = True
 
-# #コンソール上にユーザ登録確認メールを表示。ローカルで確認するため
-# EMAIL_BACKEND = 'django.core.backends.console.EmailBackend'
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
