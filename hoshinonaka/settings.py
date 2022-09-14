@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "authorization.apps.AuthorizationConfig",
     "blog.apps.BlogConfig",
     "api.apps.APIConfig",
+    "uploader.apps.UploaderConfig",
 ]
 
 # Middleware framework
