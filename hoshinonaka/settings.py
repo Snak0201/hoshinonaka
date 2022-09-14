@@ -28,7 +28,7 @@ SECRET_KEY = get_random_secret_key()
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", ".pythonanywhere.com", "Snak.pythonanywhere.com"]
+ALLOWED_HOSTS = ["localhost", ".pythonanywhere.com", "snak.pythonanywhere.com"]
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -85,7 +85,7 @@ WSGI_APPLICATION = "hoshinonaka.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
-    {
+    "default": {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
