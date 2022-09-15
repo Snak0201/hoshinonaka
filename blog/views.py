@@ -1,8 +1,8 @@
-from django.views.generic import TemplateView, DetailView, ListView
+from django.views import generic
 from .models import Article, Bureau, Committee
 
 # Create your views here.
-class IndexView(TemplateView):
+class IndexView(generic.TemplateView):
     template_name = "blog/index.html"
 
     def get_context_data(self, **kwargs):
@@ -11,14 +11,14 @@ class IndexView(TemplateView):
         return context
 
 
-class ArticleListView(ListView):
+class ArticleListView(generic.ListView):
     model = Article
     context_object_name = "articles"
     template_name = "blog/articles.html"
     queryset = Article.objects.filter(is_draft=False).order_by("updated_at")
 
 
-class ArticleView(DetailView):
+class ArticleView(generic.DetailView):
     model = Article
     context_object_name = "article"
     template_name = "blog/article.html"
@@ -33,7 +33,7 @@ class ArticleView(DetailView):
         return article
 
 
-class BureauView(DetailView):
+class BureauView(generic.DetailView):
     model = Bureau
     context_object_name = "bureau"
     template_name = "blog/bureau.html"
@@ -53,14 +53,14 @@ class BureauView(DetailView):
         return context
 
 
-class CommitteeListView(ListView):
+class CommitteeListView(generic.ListView):
     model = Committee
     context_object_name = "committees"
     template_name = "blog/committees.html"
     queryset = Committee.objects.all().order_by("order")
 
 
-class CommitteeView(DetailView):
+class CommitteeView(generic.DetailView):
     model = Committee
     context_object_name = "committee"
     template_name = "blog/committee.html"

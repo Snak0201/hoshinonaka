@@ -1,4 +1,3 @@
-from distutils import extension
 from django.db import models
 from markdown import Markdown
 
