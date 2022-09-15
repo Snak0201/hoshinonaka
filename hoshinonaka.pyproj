@@ -78,7 +78,7 @@
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="static\blog\css\base.css" />
-    <Content Include="templates\base.html" />
+    <Content Include="templates\blog\base.html" />
     <Content Include="templates\blog\article.html" />
     <Content Include="templates\blog\articles.html" />
     <Content Include="templates\blog\bureau.html" />
