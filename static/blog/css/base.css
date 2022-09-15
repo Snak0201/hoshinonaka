@@ -1,3 +1,8 @@
 header {
     color: skyblue;
+    font-size: 20pt;
+}
+
+footer {
+    color: gray;
 }

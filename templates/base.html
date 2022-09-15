@@ -4,18 +4,22 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="{% static 'blog/css/base.css' %}">
-    <title>{% block title %}{% endblock %}</title>
+    {% block extra_css %}{% endblock %}
+    <title>{% block title %}{% endblock %} Hoshinonaka</title>
 </head>
+
 <header>
-    <h1>Hoshinonaka</h1>
+    Hoshinonaka
 </header>
 
 <body>
-    <div class="content">
+    <div id="content">
         {% block content %}{% endblock %}
     </div>
 </body>
+
 <footer>
     {% block footer %}{% endblock %}
 </footer>
