@@ -77,6 +77,7 @@
     <Content Include="authorization\__pycache__\__init__.cpython-310.pyc" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
+    <Content Include="static\blog\css\article.css" />
     <Content Include="static\blog\css\base.css" />
     <Content Include="templates\blog\base.html" />
     <Content Include="templates\blog\article.html" />

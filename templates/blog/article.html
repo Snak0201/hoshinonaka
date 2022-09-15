@@ -1,5 +1,8 @@
 {% extends "blog/base.html" %}
+{% load static %}
 {% block title %}Article{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'blog/css/article.css' %}">{% endblock %}
 {% block content %}
 <div>
     <h1>{{ article.title }}</h1>
