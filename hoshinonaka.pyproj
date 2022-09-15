@@ -77,9 +77,14 @@
     <Content Include="authorization\__pycache__\__init__.cpython-310.pyc" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
+    <Content Include="static\blog\css\base.css" />
+    <Content Include="static\blog\css\index.css" />
     <Content Include="templates\base.html" />
     <Content Include="templates\blog\article.html" />
     <Content Include="templates\blog\articles.html" />
+    <Content Include="templates\blog\bureau.html" />
+    <Content Include="templates\blog\committee.html" />
+    <Content Include="templates\blog\committees.html" />
     <Content Include="templates\blog\index.html" />
     <Content Include="templates\uploader\file.html" />
     <Content Include="templates\uploader\image.html" />
@@ -97,6 +102,8 @@
     <Folder Include="hoshinonaka\" />
     <Folder Include="media\" />
     <Folder Include="static\" />
+    <Folder Include="static\blog\" />
+    <Folder Include="static\blog\css\" />
     <Folder Include="templates\" />
     <Folder Include="templates\blog\" />
     <Folder Include="templates\uploader\" />
