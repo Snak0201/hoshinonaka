@@ -12,7 +12,8 @@
 </head>
 
 <header>
-    Hoshinonaka
+    <a href="{% url 'blog:index' %}"><img src="{% static 'blog/png/hoshinonaka.png' %}" alt="next"></a>
+    {% block header %}{% endblock %}
 </header>
 
 <body>
