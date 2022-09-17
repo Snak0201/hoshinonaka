@@ -25,7 +25,8 @@ class Bureau(models.Model):
 
 
 class Committee(models.Model):
-    code = models.SlugField(verbose_name="委員会コード", max_length=16, unique=True)
+    code = models.SlugField(verbose_name="委員会コード", unique=True, max_length=16)
+    identifier = models.SlugField(verbose_name="委員会識別子", unique=True)
     name = models.CharField(verbose_name="委員会名", max_length=32)
     name_en = models.CharField(
         verbose_name="委員会英語名", max_length=128, blank=True, null=True

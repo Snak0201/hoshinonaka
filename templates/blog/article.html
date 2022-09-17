@@ -13,7 +13,7 @@
     {% endif %}<br>
     {% if article.committees.all %}委員会: {% endif %}
     {% for committee in article.committees.all %}
-    <a href="{% url 'blog:committee' committee.code %}">{{ committee.name }}</a>
+    <a href="{% url 'blog:committee' committee.identifier %}">{{ committee.name }}</a>
     {% endfor %}
 </div>
 <div>

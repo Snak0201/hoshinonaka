@@ -4,7 +4,7 @@
 <h1>委員会一覧</h1>
 <ul>
     {% for committee in committees %}
-    <li><a href="{% url 'blog:committee' committee.code %}">{{ committee.name }}</a></li>
+    <li><a href="{% url 'blog:committee' committee.identifier %}">{{ committee.name }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
