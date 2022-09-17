@@ -79,6 +79,7 @@
     <Content Include="requirements.txt" />
     <Content Include="static\blog\css\article.css" />
     <Content Include="static\blog\css\base.css" />
+    <Content Include="static\blog\icon\hoshinonaka icon.png" />
     <Content Include="templates\blog\base.html" />
     <Content Include="templates\blog\article.html" />
     <Content Include="templates\blog\articles.html" />
@@ -104,6 +105,7 @@
     <Folder Include="static\" />
     <Folder Include="static\blog\" />
     <Folder Include="static\blog\css\" />
+    <Folder Include="static\blog\icon\" />
     <Folder Include="templates\" />
     <Folder Include="templates\blog\" />
     <Folder Include="templates\uploader\" />

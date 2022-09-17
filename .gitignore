@@ -366,3 +366,4 @@ FodyWeavers.xsd
 *.sqlite3
 /media
 /hoshinonaka/local_settings.py
+/var/www/hoshinonaka/static
