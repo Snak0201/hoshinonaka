@@ -12,11 +12,15 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 from django.core.management.utils import get_random_secret_key
+import environ
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROJECT_NAME = os.path.basename(BASE_DIR)
 
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -84,12 +88,7 @@ WSGI_APPLICATION = "hoshinonaka.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-    }
-}
+DATABASES = {"default": env.db()}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -131,7 +130,6 @@ SITE_ID = 1
 AUTH_USER_MODEL = "authorization.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
-
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
