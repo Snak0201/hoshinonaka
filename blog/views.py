@@ -66,11 +66,11 @@ class CommitteeView(generic.DetailView):
     template_name = "blog/committee.html"
 
     def get_object(self):
-        return Committee.objects.get(identifier=self.kwargs["identifier"])
+        return Committee.objects.get(code=self.kwargs["code"])
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        committee = Committee.objects.get(identifier=self.kwargs["identifier"]).id
+        committee = Committee.objects.get(code=self.kwargs["code"]).id
         context["articles"] = Article.objects.filter(
             committees=committee, is_draft=False
         ).order_by("updated_at")

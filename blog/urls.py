@@ -10,7 +10,7 @@ urlpatterns = [
     path("bureaus/<slug:code>/", views.BureauView.as_view(), name="bureau"),
     path("committees/", views.CommitteeListView.as_view(), name="committees"),
     path(
-        "committees/<slug:identifier>/",
+        "committees/<slug:code>/",
         views.CommitteeView.as_view(),
         name="committee",
     ),
