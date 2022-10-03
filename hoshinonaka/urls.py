@@ -21,10 +21,17 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+import environ
+import os
+
+
+env = environ.Env()
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env.read_env(os.path.join(BASE_DIR, ".env"))
 
 urlpatterns = [
     # Uncomment the next line to enable the admin:
-    path("admin/", admin.site.urls),
+    path(env("ADMIN_URL"), admin.site.urls),
     path("", include("blog.urls")),
 ]
 
