@@ -30,16 +30,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="api\admin.py" />
-    <Compile Include="api\apis.py" />
-    <Compile Include="api\apps.py" />
-    <Compile Include="api\migrations\__init__.py" />
-    <Compile Include="api\models.py" />
-    <Compile Include="api\serializers.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="api\urls.py" />
-    <Compile Include="api\__init__.py" />
     <Compile Include="authorization\admin.py" />
     <Compile Include="authorization\apps.py" />
     <Compile Include="authorization\migrations\0001_initial.py" />
@@ -92,8 +82,6 @@
     <Content Include="templates\uploader\media.html" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="api\" />
-    <Folder Include="api\migrations\" />
     <Folder Include="authorization\" />
     <Folder Include="authorization\migrations\" />
     <Folder Include="authorization\migrations\__pycache__\" />

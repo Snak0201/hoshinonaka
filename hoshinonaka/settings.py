@@ -45,10 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django_cleanup.apps.CleanupConfig",
-    "rest_framework",
     "authorization.apps.AuthorizationConfig",
     "blog.apps.BlogConfig",
-    "api.apps.APIConfig",
     "uploader.apps.UploaderConfig",
 ]
 
