@@ -54,7 +54,6 @@
     <Compile Include="uploader\apps.py" />
     <Compile Include="uploader\migrations\__init__.py" />
     <Compile Include="uploader\models.py" />
-    <Compile Include="uploader\views.py" />
     <Compile Include="uploader\__init__.py" />
   </ItemGroup>
   <ItemGroup>
@@ -77,9 +76,6 @@
     <Content Include="templates\blog\committee.html" />
     <Content Include="templates\blog\committees.html" />
     <Content Include="templates\blog\index.html" />
-    <Content Include="templates\uploader\file.html" />
-    <Content Include="templates\uploader\image.html" />
-    <Content Include="templates\uploader\media.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="authorization\" />
@@ -96,7 +92,6 @@
     <Folder Include="static\blog\icon\" />
     <Folder Include="templates\" />
     <Folder Include="templates\blog\" />
-    <Folder Include="templates\uploader\" />
     <Folder Include="uploader\" />
     <Folder Include="uploader\migrations\" />
   </ItemGroup>
