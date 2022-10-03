@@ -132,6 +132,40 @@ DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "env": {
+            "format": "%(asctime)s [%(levelname)s] %(process)d %(thread)d"
+            "%(pathname)s:%(lineno)d %(message)s"
+        },
+    },
+    "handlers": {
+        "file": {
+            "level": "INFO",
+            "class": "logging.handlers.TimedRotatingFileHandler",
+            "filename": "var/log/{}/app.log".format(PROJECT_NAME),
+            "formatter": "env",
+            "when": "MIDNIGHT",
+            "encoding": "utf-8",
+            "backupCount": 7,
+        }
+    },
+    "loggers": {
+        "": {
+            "handlers": ["file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+        "django": {
+            "handlers": ["file"],
+            "level": "INFO",
+            "propagate": False,
+        },
+    },
+}
+
 try:
     from .local_settings import *
 except:
