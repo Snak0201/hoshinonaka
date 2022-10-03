@@ -8,6 +8,7 @@ class IndexView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["bureaus"] = Bureau.objects.all().order_by("order")
+        context["articles"] = Article.objects.all().order_by("-updated_at")[:5]
         return context
 
 
@@ -15,7 +16,7 @@ class ArticleListView(generic.ListView):
     model = Article
     context_object_name = "articles"
     template_name = "blog/articles.html"
-    queryset = Article.objects.filter(is_draft=False).order_by("updated_at")
+    queryset = Article.objects.filter(is_draft=False).order_by("-updated_at")
 
 
 class ArticleView(generic.DetailView):

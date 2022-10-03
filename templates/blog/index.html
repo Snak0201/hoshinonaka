@@ -9,7 +9,17 @@
 </ul>
 
 <div>
+    <h1>最新記事</h1>
+    <ul>
+        {% for article in articles %}
+        <li><a href="{% url 'blog:article' article.id %}">{{ article.title }}</a></li>
+        {% endfor %}
+    </ul>
     <a href="{% url 'blog:articles' %}">全記事一覧へ</a>
+</div>
+
+
+<div>
     <a href="{% url 'blog:committees' %}">全委員会一覧へ</a>
 </div>
 {% endblock %}
