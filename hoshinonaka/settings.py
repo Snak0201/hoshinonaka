@@ -29,9 +29,9 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = get_random_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool("DEBUG")
 
-ALLOWED_HOSTS = ["localhost", ".pythonanywhere.com", "snak.pythonanywhere.com"]
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
