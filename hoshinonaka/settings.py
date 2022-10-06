@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "django.contrib.sites",
     "django_cleanup.apps.CleanupConfig",
     "authorization.apps.AuthorizationConfig",
     "blog.apps.BlogConfig",
