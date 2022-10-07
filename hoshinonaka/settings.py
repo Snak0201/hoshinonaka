@@ -129,6 +129,7 @@ AUTH_USER_MODEL = "authorization.User"
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
 SESSION_COOKIE_SECURE = True
 
 LOGGING = {
