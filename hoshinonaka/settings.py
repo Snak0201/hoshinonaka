@@ -144,7 +144,7 @@ LOGGING = {
         "file": {
             "level": "INFO",
             "class": "logging.handlers.TimedRotatingFileHandler",
-            "filename": "var/log/{}/app.log".format(PROJECT_NAME),
+            "filename": "/var/log/{}/app.log".format(PROJECT_NAME),
             "formatter": "env",
             "when": "MIDNIGHT",
             "encoding": "utf-8",
