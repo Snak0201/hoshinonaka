@@ -8,10 +8,10 @@ footer {
     background-color: rgb(0, 0, 100);
 }
 
-footer a:link {
+footer a:visited {
     color: lightgreen;
 }
 
-footer a:visited {
+footer a:link {
     color: yellow;
 }
