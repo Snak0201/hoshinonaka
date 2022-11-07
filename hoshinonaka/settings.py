@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-from django.core.management.utils import get_random_secret_key
 import environ
 
 
@@ -128,45 +127,41 @@ AUTH_USER_MODEL = "authorization.User"
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-CSRF_COOKIE_SECURE = True
-CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
-SESSION_COOKIE_SECURE = True
+if not DEBUG:
+    CSRF_COOKIE_SECURE = True
+    CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
+    SESSION_COOKIE_SECURE = True
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "env": {
-            "format": "%(asctime)s [%(levelname)s] %(process)d %(thread)d"
-            "%(pathname)s:%(lineno)d %(message)s"
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+            "env": {
+                "format": "%(asctime)s [%(levelname)s] %(process)d %(thread)d"
+                "%(pathname)s:%(lineno)d %(message)s"
+            },
         },
-    },
-    "handlers": {
-        "file": {
-            "level": "INFO",
-            "class": "logging.handlers.TimedRotatingFileHandler",
-            "filename": "/var/log/{}/app.log".format(PROJECT_NAME),
-            "formatter": "env",
-            "when": "MIDNIGHT",
-            "encoding": "utf-8",
-            "backupCount": 7,
-        }
-    },
-    "loggers": {
-        "": {
-            "handlers": ["file"],
-            "level": "INFO",
-            "propagate": False,
+        "handlers": {
+            "file": {
+                "level": "INFO",
+                "class": "logging.handlers.TimedRotatingFileHandler",
+                "filename": "/var/log/{}/app.log".format(PROJECT_NAME),
+                "formatter": "env",
+                "when": "MIDNIGHT",
+                "encoding": "utf-8",
+                "backupCount": 7,
+            }
         },
-        "django": {
-            "handlers": ["file"],
-            "level": "INFO",
-            "propagate": False,
+        "loggers": {
+            "": {
+                "handlers": ["file"],
+                "level": "INFO",
+                "propagate": False,
+            },
+            "django": {
+                "handlers": ["file"],
+                "level": "INFO",
+                "propagate": False,
+            },
         },
-    },
-}
-
-try:
-    from .local_settings import *
-except:
-    pass
+    }
