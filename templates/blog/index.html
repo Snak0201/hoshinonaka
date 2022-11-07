@@ -11,7 +11,7 @@
 <div>
     <h1>最新記事</h1>
     <ul>
-        {% for article in articles %}
+        {% for article in new_articles %}
         <li><a href="{% url 'blog:article' article.id %}">{{ article.title }}</a></li>
         {% endfor %}
     </ul>
