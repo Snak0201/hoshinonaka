@@ -26,7 +26,7 @@ env.read_env(os.path.join(BASE_DIR, ".env"))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = get_random_secret_key()
+SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool("DEBUG")
@@ -129,6 +129,8 @@ AUTH_USER_MODEL = "authorization.User"
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
 CSRF_COOKIE_SECURE = True
+CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
+
 SESSION_COOKIE_SECURE = True
 
 LOGGING = {
@@ -144,7 +146,7 @@ LOGGING = {
         "file": {
             "level": "INFO",
             "class": "logging.handlers.TimedRotatingFileHandler",
-            "filename": "var/log/{}/app.log".format(PROJECT_NAME),
+            "filename": "/var/log/{}/app.log".format(PROJECT_NAME),
             "formatter": "env",
             "when": "MIDNIGHT",
             "encoding": "utf-8",
