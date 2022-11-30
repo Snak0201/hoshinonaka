@@ -21,6 +21,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from fibonacci.apis import FibonacciAPIView
 import environ
 import os
 
@@ -33,7 +34,7 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     path(env("ADMIN_URL"), admin.site.urls),
     path("", include("blog.urls")),
-    path("api/", include("fibonacci.urls"))
+    path("fib", FibonacciAPIView.as_view())
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
