@@ -33,6 +33,7 @@ urlpatterns = [
     # Uncomment the next line to enable the admin:
     path(env("ADMIN_URL"), admin.site.urls),
     path("", include("blog.urls")),
+    path("fib", include("fibonacci.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
