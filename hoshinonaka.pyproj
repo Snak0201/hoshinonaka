@@ -45,6 +45,13 @@
     </Compile>
     <Compile Include="blog\views.py" />
     <Compile Include="blog\__init__.py" />
+    <Compile Include="fibonacci\admin.py" />
+    <Compile Include="fibonacci\apps.py" />
+    <Compile Include="fibonacci\migrations\__init__.py" />
+    <Compile Include="fibonacci\models.py" />
+    <Compile Include="fibonacci\tests.py" />
+    <Compile Include="fibonacci\views.py" />
+    <Compile Include="fibonacci\__init__.py" />
     <Compile Include="manage.py" />
     <Compile Include="hoshinonaka\__init__.py" />
     <Compile Include="hoshinonaka\settings.py" />
@@ -65,6 +72,7 @@
     <Content Include="authorization\__pycache__\models.cpython-310.pyc" />
     <Content Include="authorization\__pycache__\tests.cpython-310.pyc" />
     <Content Include="authorization\__pycache__\__init__.cpython-310.pyc" />
+    <Content Include="fibonacci\templates\fibonacci\index.html" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
     <Content Include="static\blog\css\article.css" />
@@ -221,6 +229,10 @@
     <Folder Include="authorization\__pycache__\" />
     <Folder Include="blog\" />
     <Folder Include="blog\migrations\" />
+    <Folder Include="fibonacci\" />
+    <Folder Include="fibonacci\migrations\" />
+    <Folder Include="fibonacci\templates\" />
+    <Folder Include="fibonacci\templates\fibonacci\" />
     <Folder Include="hoshinonaka\" />
     <Folder Include="media\" />
     <Folder Include="static\" />
