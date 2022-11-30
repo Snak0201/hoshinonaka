@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class fibonacciConfig(AppConfig):
+class FibonacciConfig(AppConfig):
     name = 'fibonacci'

@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "authorization.apps.AuthorizationConfig",
     "blog.apps.BlogConfig",
+    "fibonacci.apps.FibonacciConfig",
     "uploader.apps.UploaderConfig",
 ]
 
